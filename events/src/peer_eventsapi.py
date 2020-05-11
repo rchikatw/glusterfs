@@ -353,7 +353,8 @@ class WebhookModCmd(Cmd):
                                     errcode=ERROR_WEBHOOK_NOT_EXISTS,
                                     json_output=args.json)
 
-            if isinstance(data[args.url], str):
+            if isinstance(data[args.url], str) or \
+               isinstance(data[args.url], unicode):
                 data[args.url]["token"] = data[args.url]
 
             if args.bearer_token != "":
